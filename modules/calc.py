@@ -1,4 +1,4 @@
-from lib.cog import Cog
+from lib.cog import cog
 from lib.command import Command, command
 
 
@@ -25,6 +25,11 @@ class Calc(Cog):
             tosub2 = int(message_parts[2])
             subbed = tosub1 - tosub2
             self.sendmsg("Your total is: {}".format(subbed))
+        elif message_parts[0] == "*" and len(message_parts) == 3:
+            toMulti1  = int(message_parts[1])
+            toMulti2 = int(message_parts[2])
+            multiTotal = toMulti1 - toMulti2
+            self.sendmsg("Your total is: {}".format(multiTotal))
         else:
             self.sendmsg("I only weached de furst gwade :(")
 
